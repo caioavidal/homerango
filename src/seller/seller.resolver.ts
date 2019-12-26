@@ -1,8 +1,9 @@
 import { Resolver, Query, Args, ResolveProperty, Parent } from "@nestjs/graphql";
 import { SellerService } from "./services/seller.service";
 import { Seller } from "./entities/seller.entity";
+import { SellerDto } from "./dto/seller.dto";
 
-@Resolver('Seller')
+@Resolver()
 export class SellerResolver {
   constructor(
     private readonly sellerService: SellerService
@@ -13,9 +14,9 @@ export class SellerResolver {
 //     return 'hello'//await this.authorsService.findOneById(id);
 //   }
 
-  @Query()
+  @Query(()=>[SellerDto])
   async sellers() {
-    await this.sellerService.findAll();
+    return await this.sellerService.findAll();
   }
 
 //   @ResolveProperty()

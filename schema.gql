@@ -4,5 +4,9 @@
 # -----------------------------------------------
 
 type Query {
-  author(id: Float!): String!
+  sellers: [SellerDto!]!
+}
+
+type SellerDto {
+  name: String!
 }
