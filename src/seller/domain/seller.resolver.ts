@@ -1,8 +1,8 @@
 import { Resolver, Query, Args, ResolveProperty, Parent, Mutation } from "@nestjs/graphql";
-import { SellerService } from "./services/seller.service";
-import { Seller } from "./entities/seller.entity";
-import { SellerDto } from "./dto/seller/seller.dto";
-import { SellerInput } from "./inputs/seller.input";
+import { SellerService } from "../application/services/seller.service";
+import { Seller } from "../infrastructure/entities/seller.entity";
+import { SellerDto } from "../application/dto/seller/seller.dto";
+import { SellerInput } from "../graphql/inputs/seller.input";
 
 @Resolver()
 export class SellerResolver {

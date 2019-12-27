@@ -1,13 +1,16 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, ObjectIdColumn } from 'typeorm';
+import { Order } from './order.entity';
 
 
 @Entity()
-export class Seller {
+export class Meal {
     @PrimaryGeneratedColumn()
     @ObjectIdColumn()
     id: number;
 
-    @Column({ length: 100 })
+    @Column()
     name: string;
-    
+
+    @Column()
+    ingredients: string[];
 }

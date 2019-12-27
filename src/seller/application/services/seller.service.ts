@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Seller } from '../entities/seller.entity';
+import { Seller } from '../../infrastructure/entities/seller.entity';
 import {CreateSellerDto} from '../dto/seller/create-seller.dto';
-import { SellerInput } from '../inputs/seller.input';
+import { SellerInput } from '../../graphql/inputs/seller.input';
 
 
 @Injectable()

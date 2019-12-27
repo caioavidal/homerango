@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
 import { SellerModule } from './seller/seller.module';
-import { Seller } from './seller/entities/seller.entity';
+import { Seller } from './seller/infrastructure/entities/seller.entity';
 
 
 @Module({
