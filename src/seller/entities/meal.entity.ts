@@ -2,12 +2,18 @@ import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, ObjectIdColumn } fro
 
 
 @Entity()
-export class Seller {
+export class Meal {
     @PrimaryGeneratedColumn()
     @ObjectIdColumn()
     id: number;
 
     @Column({ length: 100 })
     name: string;
+
+    @Column({ length: 400 })
+    ingredients: string;
+
+    @Column()
+    date: Date
     
 }

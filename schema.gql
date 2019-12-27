@@ -3,10 +3,18 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Mutation {
+  createSeller(input: SellerInput!): SellerDto!
+}
+
 type Query {
   sellers: [SellerDto!]!
 }
 
 type SellerDto {
+  name: String!
+}
+
+input SellerInput {
   name: String!
 }

@@ -1,7 +1,8 @@
-import { Resolver, Query, Args, ResolveProperty, Parent } from "@nestjs/graphql";
+import { Resolver, Query, Args, ResolveProperty, Parent, Mutation } from "@nestjs/graphql";
 import { SellerService } from "./services/seller.service";
 import { Seller } from "./entities/seller.entity";
-import { SellerDto } from "./dto/seller.dto";
+import { SellerDto } from "./dto/seller/seller.dto";
+import { SellerInput } from "./inputs/seller.input";
 
 @Resolver()
 export class SellerResolver {
@@ -18,6 +19,13 @@ export class SellerResolver {
   async sellers() {
     return await this.sellerService.findAll();
   }
+
+  @Mutation(()=>SellerDto)
+  async createSeller(@Args('input') input: SellerInput){
+    return this.sellerService.create(input);
+  }
+
+
 
 //   @ResolveProperty()
 //   async posts(@Parent() author) {
