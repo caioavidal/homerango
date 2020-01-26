@@ -3,8 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GraphQLModule } from '@nestjs/graphql';
-import { SellerModule } from './seller/seller.module';
-import { Seller } from './seller/infrastructure/entities/seller.entity';
+import { SellerModule } from './core/components/meal/seller.module';
+import { Seller } from './core/components/meal/infrastructure/entities/seller.entity';
+import { Meal } from './core/components/meal/infrastructure/entities/meal.entity';
 
 
 @Module({
@@ -18,8 +19,8 @@ import { Seller } from './seller/infrastructure/entities/seller.entity';
         type: 'mongodb',
         host: 'localhost',
         port: 27017,
-        database: 'test',
-        entities:[Seller],
+        database: 'homerango',
+        entities:[Seller,Meal],
         synchronize: true
       }
     )

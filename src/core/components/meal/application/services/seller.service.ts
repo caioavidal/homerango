@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Seller } from '../../infrastructure/entities/seller.entity';
 import {CreateSellerDto} from '../dto/seller/create-seller.dto';
-import { SellerInput } from '../../graphql/inputs/seller.input';
+import { SellerInput } from '../../../../../adapters/graphql/inputs/seller.input';
 
 
 @Injectable()

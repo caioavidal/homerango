@@ -10,4 +10,7 @@ export class Order {
 
   @Column()
   meal_id: string;
+
+  @Column()
+  date:Date;
 }

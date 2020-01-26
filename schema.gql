@@ -3,8 +3,21 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+input AddMealDto {
+  sellerId: ID!
+  name: String!
+  ingredients: [String!]!
+  date: [DateTime!]!
+}
+
+"""
+The javascript `Date` as string. Type represents date and time as the ISO Date string.
+"""
+scalar DateTime
+
 type Mutation {
   createSeller(input: SellerInput!): SellerDto!
+  addMeal(input: AddMealDto!): Boolean!
 }
 
 type Query {
